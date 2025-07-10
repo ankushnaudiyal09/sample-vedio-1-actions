@@ -1,27 +1,27 @@
-name: "hello world into yaml file"
+# Name of the workflow (appears in GitHub Actions UI)
+name: "Hello World Workflow"
 
-
-
-# on is used to trigger the event ,
+# Trigger conditions - when should this workflow run?
 on:
-  # on which command we should follow the event
+  # Run when code is pushed to these branches
   push:
-    #name of the branches we should work on 
     branches:
-      -master
-      -production
+      - master   # Primary branch
+      - production  # Production branch
 
-
-
-
+# Jobs represent a sequence of tasks to execute
 jobs:
-  #name of the job , basically a key
+  # Job ID (can be any name)
   helloWorld:
-  # runs-on , the machine which is using this file are called runners . and we want there should be the environment like we provided
-  runs-on: ubuntu-latest
-  steps:
-    # for every step there should be a name to ingage unique ness , so there would be list or array of key pair
-    -name: "print hello world"
-    #what we want to execute with the step
-    -run: "echo hello world"
-
+    # The type of machine to run on (GitHub-hosted Ubuntu runner)
+    runs-on: ubuntu-latest
+    
+    # Steps represent individual tasks within the job
+    steps:
+      # First step: Print greeting
+      - name: "Print Hello World"  # Display name in GitHub UI
+        run: echo "hello world"  # Command to execute
+      
+      # Second step: Show success message (example of additional step)
+      - name: "Completion Status"
+        run: echo "Workflow completed successfully!"
