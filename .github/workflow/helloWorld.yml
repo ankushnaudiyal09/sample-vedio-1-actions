@@ -1,0 +1,27 @@
+name: "hello world into yaml file"
+
+
+
+# on is used to trigger the event ,
+on:
+  # on which command we should follow the event
+  push:
+    #name of the branches we should work on 
+    branches:
+      -master
+      -production
+
+
+
+
+jobs:
+  #name of the job , basically a key
+  helloWorld:
+  # runs-on , the machine which is using this file are called runners . and we want there should be the environment like we provided
+  runs-on: ubuntu-latest
+  steps:
+    # for every step there should be a name to ingage unique ness , so there would be list or array of key pair
+    -name: "print hello world"
+    #what we want to execute with the step
+    -run: "echo hello world"
+
