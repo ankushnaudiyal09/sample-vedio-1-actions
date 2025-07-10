@@ -22,8 +22,8 @@ jobs:
     steps:
       # First step: Print greeting
       - name: "Print Hello World"  # Display name in GitHub UI
-        run: echo "hello world"  # Command to execute
+        run: echo hello world # Command to execute
       
-      # Second step: Show success message (example of additional step)
-      - name: "Completion Status"
-        run: echo "Workflow completed successfully!"
+
+      - name: "priting date"
+        run: date
